@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: user-crud-api
+  datasource:
+    url: jdbc:mysql://localhost:3306/usercrudapi
+    username: root
+    password: SUA_SENHA_AQUI
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
