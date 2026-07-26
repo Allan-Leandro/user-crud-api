@@ -1,6 +1,7 @@
 package com.allan.user_crud_api.Service;
 
 
+import com.allan.user_crud_api.exception.UsuarioNaoEncontradoException;
 import com.allan.user_crud_api.model.Usuario;
 import com.allan.user_crud_api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UsuarioService {
 
     public Usuario buscarPorId(Long id){
         return usuarioRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("Usuário não encontrado"));
+                .orElseThrow(()-> new UsuarioNaoEncontradoException(id));
     }
 
     public Usuario atualizar(Long id, Usuario dadosAtualizados){

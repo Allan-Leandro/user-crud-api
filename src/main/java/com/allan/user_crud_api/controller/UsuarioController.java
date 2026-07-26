@@ -3,6 +3,7 @@ package com.allan.user_crud_api.controller;
 
 import com.allan.user_crud_api.Service.UsuarioService;
 import com.allan.user_crud_api.model.Usuario;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public Usuario criar(@RequestBody Usuario usuario){
+    public Usuario criar(@Valid @RequestBody Usuario usuario){
         return usuarioService.criar(usuario);
     }
 
